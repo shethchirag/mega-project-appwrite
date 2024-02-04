@@ -21,10 +21,8 @@ export class AuthService {
         name
       );
       if (userAccount) {
-        {
-          /* call another */
-          return this.login({ email, password });
-        }
+        /* call another */
+        return this.loginAccount({ email, password });
       } else {
         return userAccount;
       }
