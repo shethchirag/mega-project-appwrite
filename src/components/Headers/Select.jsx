@@ -1,4 +1,4 @@
-import { forwardRef, useId } from "react";
+import React, { useId } from "react";
 
 function Select({ options, label, className, ...props }, ref) {
   const id = useId();
@@ -7,6 +7,7 @@ function Select({ options, label, className, ...props }, ref) {
       {label && (
         <label htmlFor={id} className={`${className}`} {...props}></label>
       )}
+
       <select
         id={id}
         className={`${className} px-3 py-2  rounded-lg bg-white text-black outline-none  focus:bg-gray-50 duration-200 border border-gray-200 w-full`}
@@ -23,6 +24,6 @@ function Select({ options, label, className, ...props }, ref) {
   );
 }
 
-const newSelect = forwardRef(Select);
-newSelect.displayName = "Select";
-export default Select;
+const SelectWithRef = React.forwardRef(Select);
+SelectWithRef.displayName = "Select";
+export default SelectWithRef;
